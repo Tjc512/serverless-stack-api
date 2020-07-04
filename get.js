@@ -13,6 +13,8 @@ export const main = handler(async (event, context) => {
     }
   };
 
+  console.log('event',event);
+  console.log('params',params);
   const result = await dynamoDb.get(params);
   if ( ! result.Item) {
     throw new Error("Item not found.");
